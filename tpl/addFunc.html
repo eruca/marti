@@ -1,0 +1,74 @@
+{{template "header"}}
+</head>
+<body>
+<div class="container">
+<h3 class="page-header">添加函数</h3>
+		<form class="form-horizontal" action="/add" method="POST">
+			<div class="control-group">
+				<label class="control-label">Language</label>
+				<div class="controls"><input type="text" id="lang" name="lang"></div>
+			</div>
+			<div class="control-group">
+				<label class="control-label">Signature</label>
+				<div class="controls"><input type="text" id="sign" name="sign"></div>
+			</div>
+			<div class="control-group">
+				<label class="control-label">Source</label>
+				<div class="controls"><input type="text" id="src" name="src"></div>
+			</div>
+			<div class="control-group">
+				<label class="control-label">Tags</label>
+				<div class="controls"><input type="text" id="tags" name="tags"></div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label">Body</label>
+				<div class="controls"><textarea class="input-xxlarge" type="text" rows="12" cols="60" id="body" name="body"></textarea></div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label">Instance</label>
+				<div class="controls"><textarea class="input-xxlarge" type="text" rows="12" cols="60" id="inst" name="inst"></textarea></div>
+			</div>
+			<div class="form-actions">
+			  <button type="submit" class="btn btn-primary" onclick="return checkFunc();">添加</button>
+			  <a type="button" class="btn btn-primary" href="/function/">取消</a>
+			</div>
+			
+		</form>
+		<script type="text/javascript">
+			function checkFunc(){
+				if (document.getElementById("lang").value.length == 0){
+					alert("please input the pkg name");
+					return false;
+				}
+				if (document.getElementById("sign").value.length == 0){
+					alert("please input the proto name");
+					return false;
+				}
+				if (document.getElementById("src").value.length == 0){
+					alert("please input the tag name");
+					return false;
+				}
+				if (document.getElementById("body").value.length == 0){
+					alert("please input example");
+					return false;
+				}
+				if (document.getElementById("inst").value.length == 0){
+					alert("please input example");
+					return false;
+				}
+				if (document.getElementById("tags").value.length == 0){
+					alert("please input example");
+					return false;
+				}
+				return true;
+			}
+		</script>
+</div>
+
+
+<h1>Root:</h1>
+    <div>Name:{{.name}};Age:{{.age}}</div>
+
+{{template "footer" .}}

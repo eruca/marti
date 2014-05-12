@@ -1,0 +1,32 @@
+{{template "header"}}
+<link rel="stylesheet" type="text/css" href="/static/css/home.css">
+{{template "navbar" .}}
+
+<div class="container">
+			<div class="frame">
+				<a class="btn btn-primary" href="/add" id="addfunc">添加函数</a>
+				<table  class="table table-striped table-hover table-bordered">
+              	<thead>
+                <tr>
+                  <th>#</th>
+                  <th>语言</th>
+                  <th>函数签名</th>
+                  <th>来源<sub>package</sub></th>
+                  <th>创建时间</th>
+                </tr>
+              	</thead>
+              	<tbody>
+                {{range .}}
+                <tr>
+                  <td>{{.Id}}</td>
+                  <td>{{.Lang}}</td>
+                  <td><a href="/view?id={{.Id}}">{{.Sign}}</a></td>
+                  <td>{{.Source}}</td>
+                  <td>{{.Created}}</td>
+                </tr>
+                {{end}}
+              	</tbody>
+            	</table>
+			</div>
+</div>
+{{template "footer" .}}

@@ -1,0 +1,15 @@
+/* 全局*/
+body { font-family:verdana,arial,sans-serif; font-size:14px;
+		margin: 0;}
+h1   { margin:0px; margin-bottom:20px; font-size:1.9em;  }
+h2   { font-size:1.2em; }
+/*
+*所有的页脚部分
+*/
+
+#footer{
+	 background: url(/static/images/emerald-footer.png) repeat-x #097a5f;
+	 padding: 50px 0 20px 0;
+	 color: #064536;
+	 text-shadow:1px 1px 1px #009571;
+}

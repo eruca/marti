@@ -1,0 +1,17 @@
+{{template "header"}}
+
+{{template "navbar" .}}
+
+<div class="container">
+	<h2>{{.Func.Lang}}:</h2>
+	<h4>{{.Func.Source}}</h4>
+	<div id= "func">{{.Func.Sign}}</div>
+	<div>
+	{{range .Labels}}
+	<span class="label label-success"><a href="/?tag={{.}}">{{.}}</a></span>
+	{{end}}
+	</div>
+	<area>{{.Func.Body}}</area>
+	<div>{{.Func.Instance}}</div>
+</div>
+{{template "footer"}}
